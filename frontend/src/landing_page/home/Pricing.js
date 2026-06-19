@@ -3,7 +3,7 @@ import React from 'react';
 function Pricing() {
     return ( 
         <h1>
-            States
+          Pricing
         </h1>
      );
 }
