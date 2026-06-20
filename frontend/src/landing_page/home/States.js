@@ -2,8 +2,8 @@ import React from 'react';
 
 function States() {
     return ( 
-      <div className='container mt-5'>
-         <div className='row'>
+      <div className='container mt-5 '>
+         <div className='row '>
             <div className='col-6 p-2'>
                <h2>
                   Trust with confidence
@@ -29,7 +29,7 @@ function States() {
                </p>
 
             </div>
-            <div className='col-6 p-2 '>
+            <div className='col-6 p-2 mb-5 '>
                <img src='media\images\ecosystem.png' style={{width:"80%"}}></img>
             </div>
 
