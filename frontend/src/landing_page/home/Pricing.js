@@ -4,7 +4,7 @@ function Pricing() {
     return (
         <div className='container mt-5'>
             <div className='row'>  
-                <div className='col-6'>
+                <div className='col-6 mb-5'>
                 <div className='col-8'>
                     <h2>
                         Unbeatable pricing
@@ -19,7 +19,7 @@ function Pricing() {
 
                 </div>
                 </div>
-                <div className='col-6'  >
+                <div className='col-6 mb-5'  >
                   <div className='row' style={{border:"0.1px solid black"}}>
                     <div className='col-6 text-center' style={{border:"0.1px solid black"}}>
                       <h1>₹0</h1>
