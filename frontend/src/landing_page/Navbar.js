@@ -3,7 +3,7 @@ import React from "react";
 function Navbar() {
   return (
     
-      <nav class="navbar navbar-expand-lg  border-bottom  " style={{backgroundColor:"#fff"}}>
+      <nav class="navbar  navbar-expand-lg  border-bottom  " style={{backgroundColor:"#fff"}}>
         <div class="container p-2 ">
           <a class="navbar-brand" href="#">
             <img src="media/images/logo.svg" style={{width:"25%" ,marginLeft:"20%"}} alt="Logo" ></img>
