@@ -2,7 +2,7 @@ import React from 'react';
 
 function Hero() {
     return ( 
-        <h1>HEllo</h1>
+        <h1>Hero</h1>
     );
 }
 

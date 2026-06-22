@@ -1,6 +1,6 @@
 import React from 'react';
 
-function LEftSection() {
+function LeftSection() {
     return (  
         <h1>
             World
@@ -8,4 +8,4 @@ function LEftSection() {
      );
 }
 
-export default LEftSection;
+export default LeftSection;

@@ -3,7 +3,7 @@ import React from 'react';
 function  RightSection() {
     return ( 
         <h1>
-            Sectionas
+            RightSection
         </h1>
      );
 }
