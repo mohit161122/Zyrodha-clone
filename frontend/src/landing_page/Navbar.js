@@ -36,7 +36,7 @@ function Navbar() {
                 </Link>
               </li>
               <li class="nav-item">
-                <Link class="nav-link active" style={{marginLeft:"30px"}} aria-current="page" to="products">
+                <Link class="nav-link active" style={{marginLeft:"30px"}} aria-current="page" to="/product">
                   Products
                 </Link>
               </li>
@@ -46,8 +46,8 @@ function Navbar() {
                 </Link>
               </li>
               <li class="nav-item">
-                <Link class="nav-link active" style={{marginLeft:"30px"}} aria-current="page" href="/supports">
-                 Supports
+                <Link class="nav-link active" style={{marginLeft:"30px"}} aria-current="page" to="/support">
+                 Support
                 </Link>
               </li>
               <li class="nav-item">
