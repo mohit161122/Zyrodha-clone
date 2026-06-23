@@ -32,44 +32,44 @@ function Footer() {
           </div>
           <div className="col-3">
             <p>Company</p>
-            <a href="">About</a>
+            <a href="" style={{color:"#666" , fontWeight:"400"}} className="text-decoration-none ">About</a>
             <br />
-            <a href="">Products</a>
+            <a href="" style={{color:"#666" , fontWeight:"400"}} className=" text-decoration-none ">Products</a>
             <br />
-            <a href="">Pricing</a>
+            <a href="" style={{color:"#666" , fontWeight:"400"}} className="text-decoration-none">Pricing</a>
             <br />
-            <a href="">Refferral programme</a>
+            <a href="" style={{color:"#666" , fontWeight:"400"}} className="text-decoration-none">Refferral programme</a>
             <br />
-            <a href="">Careers</a>
+            <a href="" style={{color:"#666" , fontWeight:"400"}} className="text-decoration-none">Careers</a>
             <br />
-            <a href="">Zerodha.tech</a>
+            <a href=""  style={{color:"#666" , fontWeight:"400"}} className="text-decoration-none">Zerodha.tech</a>
             <br />
-            <a href="">Press & media</a>
+            <a href="" style={{color:"#666" , fontWeight:"400"}} className="text-decoration-none">Press & media</a>
             <br />
-            <a href="">Zerodha xares (CSR)</a>
+            <a href="" style={{color:"#666" , fontWeight:"400"}} className="text-decoration-none">Zerodha xares (CSR)</a>
             <br />
           </div>
           <div className="col-3">
             <p>Support</p>
-            <a href="">Contact</a>
+            <a href="" style={{color:"#666" , fontWeight:"400"}} className="text-decoration-none" >Contact</a>
             <br />
-            <a href="">support portal</a>
+            <a href="" style={{color:"#666" , fontWeight:"400"}} className="text-decoration-none">support portal</a>
             <br />
-            <a href="">Z-Connect blog</a>
+            <a href="" style={{color:"#666" , fontWeight:"400"}} className="text-decoration-none">Z-Connect blog</a>
             <br />
-            <a href="">List of chanrges</a>
+            <a href="" style={{color:"#666" , fontWeight:"400"}} className="text-decoration-none">List of chanrges</a>
             <br />
-            <a href="">Downlodes & resources</a>
+            <a href="" style={{color:"#666" , fontWeight:"400"}} className="text-decoration-none">Downlodes & resources</a>
             <br />
-            ``
+            
           </div>
           <div className="col-3">
             <p>Account</p>
-            <a href="">Open an account</a>
+            <a href=""  style={{color:"#666" , fontWeight:"400"}} className="text-decoration-none" >Open an account</a>
             <br />
-            <a href="">Fund transfer</a>
+            <a href=""   style={{color:"#666" , fontWeight:"400"}} className="text-decoration-none">Fund transfer</a>
             <br />
-            <a href="">60 day challenge</a>
+            <a href=""  style={{color:"#666" , fontWeight:"400"}} className="text-decoration-none">60 day challenge</a>
             <br />
           </div>
         </div>
@@ -123,28 +123,28 @@ function Footer() {
 
       <div className="row ">
         <div className="col ml-5" style={{marginLeft:"20px"}}>
-          <a href="">NSF</a>
+          <a href=""  style={{color:"#666" , fontWeight:"400"}} className="text-decoration-none" >NSF</a>
         </div>
         <div className="col">
-          <a href="">BSE</a>
+          <a href=""  style={{color:"#666" , fontWeight:"400"}} className="text-decoration-none" >BSE</a>
         </div>
         <div className="col">
-          <a href="">MCX</a>
+          <a href=""  style={{color:"#666" , fontWeight:"400"}} className="text-decoration-none" >MCX</a>
         </div>
         <div className="col">
-          <a href="">Team & conditions</a>
-        </div>
-        <div className="col">
-          {" "}
-          <a href="">Policies & procedures</a>
+          <a href=""  style={{color:"#666" , fontWeight:"400"}} className="text-decoration-none" >Team & conditions</a>
         </div>
         <div className="col">
           {" "}
-          <a href="">Privacy policy</a>
+          <a href=""  style={{color:"#666" , fontWeight:"400"}} className="text-decoration-none" >Policies & procedures</a>
         </div>
         <div className="col">
           {" "}
-          <a href="">Disclosure</a>
+          <a href=""  style={{color:"#666" , fontWeight:"400"}} className="text-decoration-none">Privacy policy</a>
+        </div>
+        <div className="col">
+          {" "}
+          <a href=""  style={{color:"#666" , fontWeight:"400"}} className="text-decoration-none">Disclosure</a>
         </div>
       </div>
        </div>
