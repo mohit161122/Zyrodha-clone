@@ -2,15 +2,15 @@ import React from "react";
 
 function Hero() {
   return (
-    <div className="container mt-10">
-      <div className="text-center mx-8 mb-12 ">
+    <div className="container mt-5">
+      <div className="text-center ">
         <h3>
           We pioneered the discount broking model in India. <br />
           Now, we are breaking ground with our technology.
         </h3>
       </div>
-      <div className="row  border-top  ">
-        <div className="col-6 mt-14 ">
+      <div className="row  border-top mt-5  ">
+        <div className="col-6 mt-5  ">
           <div >
             <p>
               We kick-started operations on the 15th of August, 2010 with the
@@ -30,7 +30,7 @@ function Hero() {
             </p>
           </div>
         </div>
-        <div className="col-6 mt-14 ">
+        <div className="col-6 mt-5 ">
             <div>
                 <p> In addition, we run a number of popular open online educational and community initiatives to empower retail traders and investors.</p>
                 <p> <a href="" >Rainmatte</a>, our fintech fund and incubator, has invested in several fintech startups with the goal of growing the Indian capital markets.</p>

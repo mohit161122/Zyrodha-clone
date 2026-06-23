@@ -2,9 +2,30 @@ import React from 'react';
 
 function Team() {
     return ( 
-        <h1>
-            Hello
-        </h1>
+      <div className='container border-top'>
+        <div className='row mt-5'>
+
+           <h3 className='text-center'>
+            People
+           </h3>
+
+            <div className='col-6 mt-4'>
+                <img   className=' rounded-circle text-center mt-5' src='media\images\nithinKamath.jpg'/>
+                <h5 > Nithin Kamath</h5>
+                <p>Founder, CEO</p>
+            </div>
+            <div className='col-6 mt-4'>
+                <p> Nithin bootstrapped and founded Zerodha in 2010 to overcome <br/> the hurdles he faced during his decade long stint as a trader. <br/> Today, Zerodha has changed the landscape of the Indian broking <br/> industry</p>
+                <p> He is a member of the SEBI Secondary Market Advisory <br/> Committee (SMAC) and the Market Data Advisory Committee <br/> (MDAC).</p>
+                <p> Playing basketball is his zen.</p>
+                <p> Connect on 
+                    <a href='' className='text-decoration-none'> Homepage </a>/
+                    <a href='' className='text-decoration-none'> TrandingQnA </a>/
+                    <a href='' className='text-decoration-none'> Twitter </a>
+                    </p>
+            </div>
+        </div>
+      </div>
      );
 }
 
