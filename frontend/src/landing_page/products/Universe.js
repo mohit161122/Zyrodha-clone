@@ -2,12 +2,12 @@ import React from "react";
 function Universe() {
   return (
     <div className="container">
-      <div>
+      <div className=" text-center">
         <p>
           Want to know more about our technology stack? Check out the
           Zerodha.tech blog.
         </p>
-      </div>
+    
       <div>
         <h1>The Zerodha Universe</h1>
         <p>
@@ -16,24 +16,24 @@ function Universe() {
 
 
         <div className="row">
-            <div className="col-4 p-5">
+            <div className="col-4 p-3 mt-5">
                 <a href="" className="text-decoration-none">
-                    <img src="media/images/smallcaseLogo.png" alt="Smallcase"></img>
-                    <p>Thematic inverstemt platform</p>
+                    <img src="media/images/smallcaseLogo.png" alt="Smallcase" style={{width:"200px"}} ></img>
+                    <p className="text-small text-mutted">  Thematic inverstemt platform</p>
 
                 </a>
             </div>
-            <div className="col-4 p-5">
+            <div className="col-4 p-3 mt-5">
                 <a  href="" className="text-decoration-none">
-                    <img style={{width:"10rem"}} src="media/images/streakLogo.png" alt="Smallcase"></img>
-                    <p >Algo & strategy platform</p>
+                    <img style={{width:"10rem"}} src="media/images/streakLogo.png" alt="Smallcase" style={{width:"200px"}} ></img>
+                    <p className="text-small text-mutted" >Algo & strategy platform</p>
 
                 </a>
             </div>
-             <div className="col-4 p-5 ml-5">
+             <div className="col-4 p-3 mt-5">
                 <a href="" className="text-decoration-none">
-                    <img style={{width:"13rem"}} src="media\images\sensibullLogo.svg" alt="Smallcase"></img>
-                    <p>Optiona trading platform</p>
+                    <img style={{width:"13rem"}} src="media\images\sensibullLogo.svg" alt="Smallcase" style={{width:"200px"}} ></img>
+                    <p className="text-small text-mutted" >Optiona trading platform</p>
 
                 </a>
             </div>
@@ -41,24 +41,24 @@ function Universe() {
 
 
         <div className="row">
-            <div className="col-4 p-5">
+            <div className="col-4 p-3 mt-5">
                 <a href="" className="text-decoration-none">
-                    <img src="media\images\zerodhaFundhouse.png" alt="Smallcase"></img>
-                    <p>Asset management</p>
+                    <img src="media\images\zerodhaFundhouse.png" alt="Smallcase"  style={{width:"200px"}}     ></img>
+                    <p className="text-small text-mutted">Asset management</p>
 
                 </a>
             </div>
             <div className="col-4 p-5">
                 <a  href="" className="text-decoration-none">
-                    <img style={{width:"10rem"}} src="media\images\goldenpiLogo.png" alt="Smallcase"></img>
-                    <p >Bonds trading platform</p>
+                    <img style={{width:"10rem"}} src="media\images\goldenpiLogo.png" alt="Smallcase" style={{width:"200px"}} ></img>
+                    <p  className="text-small text-mutted">Bonds trading platform</p>
 
                 </a>
             </div>
              <div className="col-4 p-5 ml-5">
                 <a href="" className="text-decoration-none">
-                    <img style={{width:"13rem"}} src="media\images\dittoLogo.png" alt="Smallcase"></img>
-                    <p>Insurance</p>
+                    <img style={{width:"13rem"}} src="media\images\dittoLogo.png" alt="Smallcase" style={{width:"200px"}} ></img>
+                    <p className="text-small text-mutted">Insurance</p>
 
                 </a>
             </div>
@@ -80,6 +80,7 @@ function Universe() {
         </button>
 
       </div>
+        </div>
 
     </div>
   );
