@@ -12,13 +12,14 @@ import Navbar from "./landing_page/Navbar";
 import Footer from "./landing_page/Footer";
 import NotFound from './landing_page/NotFound';
 
-
 //import react router dom
 import {BrowserRouter, Route, Routes} from "react-router-dom" ;
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <React.StrictMode>
+
   <BrowserRouter>
   <Navbar/>
    <Routes>
@@ -34,5 +35,7 @@ root.render(
    <Footer/>
   
   </BrowserRouter>
+  
+  </React.StrictMode>
 );
 
