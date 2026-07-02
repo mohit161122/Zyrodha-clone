@@ -11,4 +11,4 @@ const PositionsSchema = new Schema({
   isLoss: Boolean,
 });
 
-model.exports = { PositionsSchema };
+module.exports = { PositionsSchema };
