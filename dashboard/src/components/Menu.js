@@ -15,11 +15,26 @@ const Menu = () => {
   const menuClass = "menu";
   const activeMenuClass = "menu selected";
 
+  // Resolve home URL: in production the frontend is at the root domain
+  const homeURL = process.env.PUBLIC_URL
+    ? window.location.origin + "/"
+    : "http://localhost:3000";
+
   return (
     <div className="menu-container">
-      <img src="logo.png" style={{ width: "50px" }} alt="logo" />
+      <img src={`${process.env.PUBLIC_URL || ""}/logo.png`} style={{ width: "50px" }} alt="logo" />
       <div className="menus">
         <ul>
+          <li>
+            <a
+              href={homeURL}
+              className="menu"
+              style={{ textDecoration: "none" }}
+              title="Back to Zerodha Home"
+            >
+              <p className="menu" style={{ color: "#4184f3" }}>← Home</p>
+            </a>
+          </li>
           <li>
             <Link
               to="/"
