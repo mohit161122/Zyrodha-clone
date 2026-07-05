@@ -1,18 +1,51 @@
 import React, { useState, useEffect } from "react";
-// import { holdings } from "../data/data";
-import   axios from 'axios';
-
+import { holdings } from "../data/data";
+import axios from "axios";
+import { VerticalGraph } from "./VerticalGraph";
 
 const Holdings = () => {
-  const [allHoldings, setAllHoldings] = useState([]);
+  const [allHoldings, setAllHoldings] = useState(holdings);
 
   useEffect(() => {
     axios.get("http://localhost:3002/allHoldings").then((res) => {
-      console.log(res.data);
-      setAllHoldings(res.data);
-    })
+      if (res.data && res.data.length > 0) {
+        setAllHoldings(res.data);
+      }
+    }).catch(() => {
+      // fallback to static data if backend is not running
+    });
+  }, []);
 
-  } , []);
+  const labels = allHoldings.map((stock) => stock.name);
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: "Stock Price",
+        data: allHoldings.map((stock) => stock.price),
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        borderColor: "rgba(255, 99, 132, 1)",
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  // export const data = {
+  //   labels,
+  //   datasets: [
+  //     {
+  //       label: 'Dataset 1',
+  //       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+  //       backgroundColor: 'rgba(255, 99, 132, 0.5)',
+  //     },
+  //     {
+  //       label: 'Dataset 2',
+  //       data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+  //       backgroundColor: 'rgba(53, 162, 235, 0.5)',
+  //     },
+  //   ],
+  // };
 
   return (
     <>
@@ -72,6 +105,9 @@ const Holdings = () => {
           <h5>1,553.40 (+5.20%)</h5>
           <p>P&L</p>
         </div>
+      </div>
+      <div style={{ position: "relative", width: "100%", height: "400px", marginTop: "5%" }}>
+        <VerticalGraph data={data} />
       </div>
     </>
   );
