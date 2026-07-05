@@ -33,32 +33,34 @@ app.get("/", (req, res) => {
   res.send("Zyrodha Clone API is running!");
 });
 
-app.get("/allHoldings", async (req, res) => {
+const router = express.Router();
+
+router.get("/allHoldings", async (req, res) => {
   await connectDB();
   let allHoldings = await HoldingsModel.find({});
   res.json(allHoldings);
 });
 
-app.get("/allPositions", async (req, res) => {
+router.get("/allPositions", async (req, res) => {
   await connectDB();
   let allPositions = await PositionsModel.find({});
   res.json(allPositions);
 });
 
 // Keep legacy typo route for backward compatibility
-app.get("/allPositons", async (req, res) => {
+router.get("/allPositons", async (req, res) => {
   await connectDB();
   let allPositons = await PositionsModel.find({});
   res.json(allPositons);
 });
 
-app.get("/allOrders", async (req, res) => {
+router.get("/allOrders", async (req, res) => {
   await connectDB();
   let allOrders = await OrdersModel.find({});
   res.json(allOrders);
 });
 
-app.post('/newOrder', async (req, res) => {
+router.post('/newOrder', async (req, res) => {
   await connectDB();
   let newOrder = new OrdersModel({
     name: req.body.name,
@@ -70,6 +72,9 @@ app.post('/newOrder', async (req, res) => {
   await newOrder.save();
   res.send("Order saved!");
 });
+
+app.use("/", router);
+app.use("/api", router);
 
 // For local development: start the server normally
 if (process.env.NODE_ENV !== 'production' && require.main === module) {
