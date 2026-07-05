@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import API_BASE_URL from "../config";
 
 const Orders = () => {
   const [allOrders, setAllOrders] = useState([]);
@@ -8,9 +9,11 @@ const Orders = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/allOrders")
+      .get(`${API_BASE_URL}/allOrders`)
       .then((res) => {
-        setAllOrders(res.data);
+        if (res.data && Array.isArray(res.data)) {
+          setAllOrders(res.data);
+        }
       })
       .catch(() => {
         // backend not running — show empty state

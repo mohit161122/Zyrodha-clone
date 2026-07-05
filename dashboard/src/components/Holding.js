@@ -9,7 +9,7 @@ const Holdings = () => {
 
   useEffect(() => {
     axios.get(`${API_BASE_URL}/allHoldings`).then((res) => {
-      if (res.data && res.data.length > 0) {
+      if (res.data && Array.isArray(res.data) && res.data.length > 0) {
         setAllHoldings(res.data);
       }
     }).catch(() => {
@@ -66,20 +66,23 @@ const Holdings = () => {
           </tr>
 
           {allHoldings.map((stock, index) => {
-            const curValue = stock.price * stock.qty;
-            const isProfit = curValue - stock.avg * stock.qty >= 0.0;
+            const qty = Number(stock.qty) || 0;
+            const avg = Number(stock.avg) || 0;
+            const price = Number(stock.price) || 0;
+            const curValue = price * qty;
+            const isProfit = curValue - avg * qty >= 0.0;
             const profClass = isProfit ? "profit" : "loss";
             const dayClass = stock.isLoss ? "loss " : "profit";
 
             return (
               <tr key={index}>
                 <td>{stock.name}</td>
-                <td>{stock.qty}</td>
-                <td>{stock.avg.toFixed(2)}</td>
-                <td>{stock.price.toFixed(2)}</td>
+                <td>{qty}</td>
+                <td>{avg.toFixed(2)}</td>
+                <td>{price.toFixed(2)}</td>
                 <td>{curValue.toFixed(2)}</td>
                 <td className={profClass}>
-                  {(curValue - stock.avg * stock.qty).toFixed(2)}
+                  {(curValue - avg * qty).toFixed(2)}
                 </td>
                 <td className={profClass}>{stock.net}</td>
                 <td className={dayClass}>{stock.day}</td>

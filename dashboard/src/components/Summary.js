@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { holdings as staticHoldings } from "../data/data";
 import axios from "axios";
+import API_BASE_URL from "../config";
 
 const Summary = () => {
   const [allHoldings, setAllHoldings] = useState(staticHoldings);
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/allHoldings")
+      .get(`${API_BASE_URL}/allHoldings`)
       .then((res) => {
-        if (res.data && res.data.length > 0) {
+        if (res.data && Array.isArray(res.data) && res.data.length > 0) {
           setAllHoldings(res.data);
         }
       })
@@ -19,11 +20,11 @@ const Summary = () => {
   }, []);
 
   const totalInvestment = allHoldings.reduce(
-    (acc, stock) => acc + stock.avg * stock.qty,
+    (acc, stock) => acc + (Number(stock.avg) || 0) * (Number(stock.qty) || 0),
     0
   );
   const currentValue = allHoldings.reduce(
-    (acc, stock) => acc + stock.price * stock.qty,
+    (acc, stock) => acc + (Number(stock.price) || 0) * (Number(stock.qty) || 0),
     0
   );
   const pnl = currentValue - totalInvestment;
