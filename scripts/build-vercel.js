@@ -5,13 +5,21 @@ const { spawnSync } = require("child_process");
 const root = path.resolve(__dirname, "..");
 const dist = path.join(root, "dist");
 
-function run(command, args, options = {}) {
-  const result = spawnSync(command, args, {
+function runNpm(args, options = {}) {
+  const npmCli = process.env.npm_execpath;
+  const command = npmCli ? process.execPath : process.platform === "win32" ? "npm.cmd" : "npm";
+  const commandArgs = npmCli ? [npmCli, ...args] : args;
+  const result = spawnSync(command, commandArgs, {
     cwd: root,
     env: { ...process.env, ...options.env },
-    shell: process.platform === "win32",
+    shell: false,
     stdio: "inherit",
   });
+
+  if (result.error) {
+    console.error(result.error.message);
+    process.exit(1);
+  }
 
   if (result.status !== 0) {
     process.exit(result.status || 1);
@@ -25,10 +33,10 @@ function copyBuild(from, to) {
 
 fs.rmSync(dist, { recursive: true, force: true });
 
-run("npm", ["--prefix", "frontend", "run", "build"], {
+runNpm(["--prefix", "frontend", "run", "build"], {
   env: { CI: "false" },
 });
-run("npm", ["--prefix", "dashboard", "run", "build"], {
+runNpm(["--prefix", "dashboard", "run", "build"], {
   env: { CI: "false", PUBLIC_URL: "/dashboard" },
 });
 

@@ -1,0 +1,13 @@
+node_modules/
+build/
+dist/
+
+frontend/node_modules/
+frontend/build/
+
+dashboard/node_modules/
+dashboard/build/
+
+backend/node_modules/
+.env
+backend/.env
