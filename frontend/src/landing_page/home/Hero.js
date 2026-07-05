@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
     <div className="container p-5 mb-5">
       <div className="row text-center">
-        <img src="media/images/homeHEro.png" alt="Hero Image"></img>
+        <img src="media/images/homeHero.png" alt="Hero Image" style={{ width: "100%" }}></img>
         <h1 className="mt-5">Invest in everything</h1>
         <p className="mt-2">
           {" "}
@@ -15,13 +16,13 @@ function Hero() {
           className="mt-2 mb-5"
           style={{ display: "flex", gap: "1rem", justifyContent: "center" }}
         >
-          <button
-            type="button"
+          <Link
+            to="/signup"
             className="btn btn-primary p-2 fs-5"
             style={{ width: "180px" }}
           >
             Signup now
-          </button>
+          </Link>
           <a
             id="Dashboard-button"
             href="/dashboard"
@@ -37,3 +38,4 @@ function Hero() {
 }
 
 export default Hero;
+
