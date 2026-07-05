@@ -1,6 +1,42 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { holdings as staticHoldings } from "../data/data";
+import axios from "axios";
 
 const Summary = () => {
+  const [allHoldings, setAllHoldings] = useState(staticHoldings);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3002/allHoldings")
+      .then((res) => {
+        if (res.data && res.data.length > 0) {
+          setAllHoldings(res.data);
+        }
+      })
+      .catch(() => {
+        // fallback to static data
+      });
+  }, []);
+
+  const totalInvestment = allHoldings.reduce(
+    (acc, stock) => acc + stock.avg * stock.qty,
+    0
+  );
+  const currentValue = allHoldings.reduce(
+    (acc, stock) => acc + stock.price * stock.qty,
+    0
+  );
+  const pnl = currentValue - totalInvestment;
+  const pnlPercent = totalInvestment > 0 ? (pnl / totalInvestment) * 100 : 0;
+  const isProfit = pnl >= 0;
+
+  const formatCurrency = (value) => {
+    if (Math.abs(value) >= 1000) {
+      return (value / 1000).toFixed(2) + "k";
+    }
+    return value.toFixed(2);
+  };
+
   return (
     <>
       <div className="username">
@@ -34,13 +70,14 @@ const Summary = () => {
 
       <div className="section">
         <span>
-          <p>Holdings (13)</p>
+          <p>Holdings ({allHoldings.length})</p>
         </span>
 
         <div className="data">
           <div className="first">
-            <h3 className="profit">
-              1.55k <small>+5.20%</small>{" "}
+            <h3 className={isProfit ? "profit" : "loss"}>
+              {isProfit ? "" : "-"}{formatCurrency(Math.abs(pnl))}{" "}
+              <small>{isProfit ? "+" : "-"}{Math.abs(pnlPercent).toFixed(2)}%</small>{" "}
             </h3>
             <p>P&L</p>
           </div>
@@ -48,10 +85,10 @@ const Summary = () => {
 
           <div className="second">
             <p>
-              Current Value <span>31.43k</span>{" "}
+              Current Value <span>{formatCurrency(currentValue)}</span>{" "}
             </p>
             <p>
-              Investment <span>29.88k</span>{" "}
+              Investment <span>{formatCurrency(totalInvestment)}</span>{" "}
             </p>
           </div>
         </div>

@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "backend/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "build" }
+    },
+    {
+      "src": "dashboard/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "build" }
+    }
+  ],
+  "routes": [
+    { "src": "/allHoldings", "dest": "backend/index.js" },
+    { "src": "/allPositions", "dest": "backend/index.js" },
+    { "src": "/allPositons", "dest": "backend/index.js" },
+    { "src": "/allOrders", "dest": "backend/index.js" },
+    { "src": "/newOrder", "dest": "backend/index.js" },
+    { "src": "/api/(.*)", "dest": "backend/index.js" },
+    { "src": "/dashboard/(.*)", "dest": "dashboard/build/index.html" },
+    { "src": "/dashboard", "dest": "dashboard/build/index.html" },
+    { "src": "/(.*)", "dest": "frontend/build/index.html" }
+  ]
+}

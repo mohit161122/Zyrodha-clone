@@ -1,0 +1,12 @@
+{
+  "name": "zyrodha-clone",
+  "version": "1.0.0",
+  "description": "Zerodha clone - monorepo with frontend, dashboard and backend",
+  "private": true,
+  "scripts": {
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm start",
+    "start:dashboard": "cd dashboard && npm start",
+    "install:all": "cd backend && npm install && cd ../frontend && npm install && cd ../dashboard && npm install"
+  }
+}
